@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "pnpm run watch",
+      "problemMatcher": [
+        "$esbuild-watch",
+        "$tsc-watch"
+      ],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "pnpm: watch"
+    },
+    {
+      "type": "shell",
+      "command": "pnpm run compile",
+      "group": "build",
+      "label": "pnpm: compile"
+    }
+  ]
+}

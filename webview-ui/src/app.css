@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  font-weight: var(--vscode-font-weight);
+  color: var(--vscode-foreground);
+  background-color: transparent;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  padding: 8px 12px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  border: none;
+  padding: 4px 12px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+button:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+
+button:focus-visible {
+  outline: 1px solid var(--vscode-focusBorder);
+  outline-offset: 1px;
+}
+
+button.secondary {
+  background: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+}
+
+button.secondary:hover {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+button.danger {
+  background: var(--vscode-inputValidation-errorBackground);
+  color: var(--vscode-errorForeground);
+}
+
+button.icon-btn {
+  background: transparent;
+  color: var(--vscode-foreground);
+  padding: 2px 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.icon-btn:hover {
+  background: var(--vscode-toolbar-hoverBackground);
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border, transparent);
+  padding: 4px 8px;
+  width: 100%;
+  line-height: 1.4;
+}
+
+input:focus,
+select:focus {
+  outline: 1px solid var(--vscode-focusBorder);
+  outline-offset: -1px;
+}
+
+input::placeholder {
+  color: var(--vscode-input-placeholderForeground);
+}
+
+select {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  color: var(--vscode-descriptionForeground);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--vscode-widget-border, var(--vscode-panel-border));
+  margin: 8px 0;
+}
+
+.codicon {
+  font-family: codicon;
+  font-size: 16px;
+  line-height: 1;
+}

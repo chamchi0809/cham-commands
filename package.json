@@ -1,0 +1,93 @@
+{
+  "name": "cham-commands",
+  "displayName": "Cham Commands",
+  "description": "Manage and run custom commands with configurable arguments from the sidebar",
+  "version": "0.1.0",
+  "publisher": "chamchi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chamchi0809/cham-commands"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "commands",
+    "terminal",
+    "scripts",
+    "runner"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cham-commands",
+          "title": "Cham Commands",
+          "icon": "$(terminal)"
+        }
+      ]
+    },
+    "views": {
+      "cham-commands": [
+        {
+          "type": "webview",
+          "id": "chamCommandsPanel",
+          "name": "Commands"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cham-commands.openPanel",
+        "title": "Open Commands Panel",
+        "category": "Cham Commands"
+      },
+      {
+        "command": "cham-commands.importPackageJson",
+        "title": "Import from package.json",
+        "icon": "$(file-symlink-file)",
+        "category": "Cham Commands"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "cham-commands.importPackageJson",
+          "when": "view == chamCommandsPanel",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && node esbuild.js",
+    "check-types": "tsc --noEmit",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && node esbuild.js --production",
+    "build:webview": "cd webview-ui && pnpm run build",
+    "lint": "eslint src/"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/vscode": "^1.100.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
