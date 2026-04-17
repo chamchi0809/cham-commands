@@ -2,7 +2,7 @@
   "name": "cham-commands",
   "displayName": "Cham Commands",
   "description": "Manage and run custom commands with configurable arguments from the sidebar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "chamchi",
   "repository": {
     "type": "git",

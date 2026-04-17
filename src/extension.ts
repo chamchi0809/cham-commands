@@ -3,7 +3,7 @@ import { CommandPanelProvider } from "./providers/commandPanelProvider";
 import { StorageManager } from "./storage/storageManager";
 
 export function activate(context: vscode.ExtensionContext): void {
-  const storage = new StorageManager(context.globalState);
+  const storage = new StorageManager(context.workspaceState);
   const provider = new CommandPanelProvider(context.extensionUri, storage);
 
   context.subscriptions.push(
